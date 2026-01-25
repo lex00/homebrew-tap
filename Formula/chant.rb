@@ -30,6 +30,6 @@ class Chant < Formula
   end
 
   test do
-    system "#{bin}/chant", "--version"
+    system "#{bin}/chant", "help"
   end
 end

@@ -20,7 +20,7 @@ class Chant < Formula
   end
 
   def install
-    bin.install "chant-#{os.kernel_name.downcase}-#{hardware.platform_cpu}" => "chant"
+    bin.install Dir["chant-*"].first => "chant"
   end
 
   test do

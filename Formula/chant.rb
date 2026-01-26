@@ -1,37 +1,29 @@
 class Chant < Formula
-  desc "Intent Driven Development - specification-driven development tool"
+  desc "Intent Driven Development tool with specification-driven execution"
   homepage "https://github.com/lex00/chant"
-  version "0.1.10"
-  license "MIT"
+  version "0.1.11"
 
   on_macos do
-    if Hardware::CPU.arm?
+    on_arm do
       url "https://github.com/lex00/chant/releases/download/v#{version}/chant-macos-aarch64"
-      sha256 "f9ee41d05cc8573057ca67b759b79d4bb6244824ac81d6045ce436d7648ee462"
-    else
+      sha256 "289093bbd4f3f0b4ea23d6119d34ca98bc660e8ba332d65fa9ac6e2297845888"
+    end
+    on_intel do
       url "https://github.com/lex00/chant/releases/download/v#{version}/chant-macos-x86_64"
-      sha256 "cc2ebd3ff89cc1d951bc99b6713a2358108ae127d2e30a76b521701d1b0aef7c"
+      sha256 "9ef5747582164c41a7df185198419aede27c642691bb9b6f546cb3416e75b429"
     end
   end
 
   on_linux do
-    on_intel do
-      url "https://github.com/lex00/chant/releases/download/v#{version}/chant-linux-x86_64"
-      sha256 "0e645e9c0ee0adeba588eb6bbbd9e42ee4301d62434ca4d9730c45ace91a4813"
-    end
+    url "https://github.com/lex00/chant/releases/download/v#{version}/chant-linux-x86_64"
+    sha256 "1f410f6960fc886e2139fa62f1b7bb816f235fa74af612c51947db68d7fe227d"
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "chant-macos-aarch64" => "chant"
-    elsif OS.mac?
-      bin.install "chant-macos-x86_64" => "chant"
-    else
-      bin.install "chant-linux-x86_64" => "chant"
-    end
+    bin.install "chant-#{os.kernel_name.downcase}-#{hardware.platform_cpu}" => "chant"
   end
 
   test do
-    system bin/"chant", "help"
+    assert_match version.to_s, shell_output("#{bin}/chant --version")
   end
 end

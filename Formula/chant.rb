@@ -15,8 +15,10 @@ class Chant < Formula
   end
 
   on_linux do
-    url "https://github.com/lex00/chant/releases/download/v#{version}/chant-linux-x86_64"
-    sha256 "fde0bb021a0ccb877a11227512af95c10d1c4a446dcfef0998799e8210bcb67a"
+    on_intel do
+      url "https://github.com/lex00/chant/releases/download/v#{version}/chant-linux-x86_64"
+      sha256 "fde0bb021a0ccb877a11227512af95c10d1c4a446dcfef0998799e8210bcb67a"
+    end
   end
 
   def install
@@ -30,6 +32,6 @@ class Chant < Formula
   end
 
   test do
-    system "#{bin}/chant", "help"
+    system bin/"chant", "help"
   end
 end

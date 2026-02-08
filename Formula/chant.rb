@@ -1,22 +1,22 @@
 class Chant < Formula
   desc "Intent Driven Development tool with specification-driven execution"
   homepage "https://github.com/lex00/chant"
-  version "0.19.0"
+  version "0.19.1"
 
   on_macos do
     on_arm do
       url "https://github.com/lex00/chant/releases/download/v#{version}/chant-macos-aarch64"
-      sha256 "e188ce808ba8a1024616e538978c3d732fda33c5929bd77e23eb342fc176e82a"
+      sha256 "37c362aa651e77b31d053872b389c9c89cbca51b17cb93856a09ea3772121db2"
     end
     on_intel do
       url "https://github.com/lex00/chant/releases/download/v#{version}/chant-macos-x86_64"
-      sha256 "b42ffa39ce7fb12761ce230935922309d5e2ac46fa9452133b52797600e4ee7b"
+      sha256 "7233fdb52a96c890ea42fdcf8ded0e0beddb351c55af5e32bbe18b977b62c671"
     end
   end
 
   on_linux do
     url "https://github.com/lex00/chant/releases/download/v#{version}/chant-linux-x86_64"
-    sha256 "d9056c6ccd6bd50c06351b91532970c581b7c7f6af10455baaa6e3e03a395139"
+    sha256 "6f0c60f1af998a91e27ebf72e17b5c33e0663e8e73123eee178bcc1f7aab3c3b"
   end
 
   def install

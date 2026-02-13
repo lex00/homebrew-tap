@@ -6,17 +6,17 @@ class Chant < Formula
   on_macos do
     on_arm do
       url "https://github.com/lex00/chant/releases/download/v#{version}/chant-macos-aarch64"
-      sha256 "d436e262ebdeda10e95871d05d30404c4c0352a7e5be7057366a8a6d69b119cb"
+      sha256 "e00ad7a1aae0f7ea75dcc24427d4b84fc591e590071d6797d0daa8916ab96340"
     end
     on_intel do
       url "https://github.com/lex00/chant/releases/download/v#{version}/chant-macos-x86_64"
-      sha256 "24e813981334abed9b1e8b9af00ae255b9b12647b9f6cc9cbd0a77693e016f6b"
+      sha256 "ac6e737686b175120613c13a0ddec22b676fba15c101e3b11fb9f55bed50fac5"
     end
   end
 
   on_linux do
     url "https://github.com/lex00/chant/releases/download/v#{version}/chant-linux-x86_64"
-    sha256 "262a18fc9de1767c6e73fe39ca7c10564e647320f8402a04bb1b683374baf6de"
+    sha256 "c64270fa428ca9e7b08729b9d80d562623f867f18cb12bec963907bc700dbe1e"
   end
 
   def install

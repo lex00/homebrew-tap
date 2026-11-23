@@ -1,28 +1,26 @@
 class Gp < Formula
   desc "Game Printer tool: port old games, make themes and new games, play in a browser"
   homepage "https://lex00.github.io/gameprinter/"
-  version "0.1.2"
+  version "0.1.3"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/lex00/gameprinter/releases/download/v0.1.2/gp-aarch64-apple-darwin.tar.gz"
-      sha256 "e7acd5cdb8e5c0ae95c2224838dd8a1e759491d92ed375e8ef48a9a76031ddda"
+      url "https://github.com/lex00/gameprinter/releases/download/v0.1.3/gp-aarch64-apple-darwin.tar.gz"
+      sha256 "94defb7f3a5cfd8617129628d10d57f274386e8f61fc77fb13710b7763614e40"
     end
-    on_intel do
-      url "https://github.com/lex00/gameprinter/releases/download/v0.1.2/gp-x86_64-apple-darwin.tar.gz"
-      sha256 "d58acc90c8c2e85b5edf1d4fc3e94f2ffc9f9821a3e74af2ffa16b7f3d2c24d2"
-    end
+    # No Intel Mac build for now: build gp from source there.
+    depends_on arch: :arm64
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/lex00/gameprinter/releases/download/v0.1.2/gp-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c733e50f92f7844b733742bc2c4a77c20e920b18d6a44b22e473ea6596a2f551"
+      url "https://github.com/lex00/gameprinter/releases/download/v0.1.3/gp-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "6f30dd79242c39f5b36a7a7c4973dcede0754fee394e039b56dbf61048bc64d3"
     end
     on_intel do
-      url "https://github.com/lex00/gameprinter/releases/download/v0.1.2/gp-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "40ee79b35da5c5838af6ca65d6f2a6f04a1da8a57ec95ce50b1d26abdd4b6676"
+      url "https://github.com/lex00/gameprinter/releases/download/v0.1.3/gp-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "404cffce52d20f318ba080a907b4d2a9cf5f80174c98da6a6a190a41f09480e1"
     end
   end
 
